@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahlam Tarik — AI Engineer & Researcher</title>
+<meta name="description" content="AI engineer and researcher — self-supervised representation learning for physiological and audio signals.">
+<meta name="author" content="Ahlam Tarik">
+<meta property="og:title" content="Ahlam Tarik — AI Engineer & Researcher">
+<meta property="og:description" content="Self-supervised representation learning for physiological and audio signals.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◟</text></svg>">
+<style>
+  :root{
+    --bg:#FBFAF8;
+    --ink:#16150F;
+    --muted:#6E6A5E;
+    --line:#E4E0D6;
+    --accent:#B4452B;
+    --card:#FFFFFF;
+    --grid:#16150F;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0E0E0C;
+      --ink:#EDEAE1;
+      --muted:#8E8A7E;
+      --line:#26251F;
+      --accent:#E4785A;
+      --card:#151511;
+      --grid:#EDEAE1;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font:400 16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    letter-spacing:-.005em;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 26px}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+  /* ---------- hero ---------- */
+  header{position:relative;padding:88px 0 40px;overflow:hidden}
+  #bgfx{position:absolute;top:0;right:0;width:min(46%,380px);height:100%;opacity:.55;pointer-events:none}
+  @media (prefers-color-scheme: dark){#bgfx{opacity:.8}}
+  @media (max-width:700px){#bgfx{width:100%;opacity:.22}}
+  .hero{position:relative;z-index:2}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+  h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(42px,7.5vw,66px);line-height:1;margin:0 0 16px;letter-spacing:-.02em}
+  .lede{font-size:17px;max-width:44ch;margin:0 0 24px;color:var(--muted)}
+  .lede b{color:var(--ink);font-weight:500}
+
+  .links{display:flex;flex-wrap:wrap;gap:7px}
+  .links a{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;background:var(--card);transition:border-color .16s,color .16s}
+  .links a:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* ---------- facts strip ---------- */
+  .facts{display:flex;flex-wrap:wrap;gap:8px 22px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .facts b{color:var(--ink);font-weight:500}
+
+  /* ---------- sections ---------- */
+  section{padding:38px 0 6px}
+  h2{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 16px;display:flex;align-items:center;gap:10px}
+  h2::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:700px){.grid{grid-template-columns:1fr}}
+
+  .cap{
+    border:1px solid var(--line);border-radius:14px;background:var(--card);
+    padding:16px 17px 15px;display:flex;flex-direction:column;gap:7px;
+    transition:border-color .18s,transform .18s;
+  }
+  .cap:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .cap .org{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+  .cap h3{font-size:15.5px;font-weight:600;margin:0;line-height:1.3}
+  .cap p{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+  .cap .foot{margin-top:auto;padding-top:4px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .stat{font-family:"JetBrains Mono",monospace;font-size:11.5px;padding:3px 8px;border-radius:6px;background:color-mix(in srgb,var(--accent) 11%,transparent);color:var(--accent);white-space:nowrap}
+  .yr{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);margin-left:auto}
+  .cap a.src{font-size:12px;color:var(--muted);border-bottom:1px solid var(--line)}
+  .cap a.src:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* ---------- chips ---------- */
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{border:1px solid var(--line);border-radius:8px;padding:5px 11px;font-size:12.5px;color:var(--muted);background:var(--card)}
+  .chip b{color:var(--ink);font-weight:500}
+
+  .stack{display:grid;grid-template-columns:auto 1fr;gap:9px 18px;align-items:baseline}
+  .stack dt{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .stack dd{margin:0;font-size:14px}
+  @media (max-width:560px){.stack{grid-template-columns:1fr;gap:3px 0}.stack dd{margin-bottom:10px}}
+
+  footer{margin-top:44px;padding:20px 0 50px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+  @media (prefers-reduced-motion: reduce){#bgfx{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <canvas id="bgfx" aria-hidden="true"></canvas>
+  <div class="wrap hero">
+    <p class="eyebrow">Fez, Morocco</p>
+    <h1>Ahlam Tarik</h1>
+    <p class="lede">
+      AI engineer &amp; researcher. <b>Self-supervised representation learning</b>
+      for physiological and audio signals — and the evaluation design that proves a result is real.
+    </p>
+    <nav class="links">
+      <a href="mailto:ahlam.tarik@eidia.ueuromed.org">Email</a>
+      <a href="https://github.com/theahlamtarik" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/theahlamtarik" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="facts">
+    <span><b>1st in class</b> · GPA 18.21/20</span>
+    <span>AI Engineering, <b>UEMF–EIDIA</b> · 2022–27</span>
+    <span>Merit Scholarship</span>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section>
+    <h2>Research</h2>
+    <div class="grid">
+
+      <article class="cap">
+        <span class="org">KAUST · RC3</span>
+        <h3>Audio watermark forensics</h3>
+        <p>Separating watermark-<em>removed</em> from never-watermarked speech, under unseen schemes and attacks. WavLM probing localizes the evidence in early encoder layers.</p>
+        <div class="foot">
+          <span class="stat">80.9% 3-class</span>
+          <span class="stat">91.4% attack ID</span>
+          <span class="yr">2026 –</span>
+        </div>
+      </article>
+
+      <article class="cap">
+        <span class="org">École Centrale Casablanca</span>
+        <h3>AF onset: precursor or fingerprint?</h3>
+        <p>Probing HEPA/JEPA ECG representations for 5-min atrial-fibrillation forecasting. Patient-held-out protocol over 10,699 decision points.</p>
+        <div class="foot">
+          <span class="stat">0.978 AUROC</span>
+          <span class="stat">HRV base 0.49</span>
+          <span class="yr">2026</span>
+        </div>
+      </article>
+
+      <article class="cap">
+        <span class="org">UEMF · supervised</span>
+        <h3>Survival models for Alzheimer's</h3>
+        <p>MCI-to-Alzheimer's conversion on longitudinal ADNI data — Random Survival Forests vs. Cox and joint models.</p>
+        <div class="foot">
+          <span class="stat">ADNI</span>
+          <span class="yr">2026 –</span>
+        </div>
+      </article>
+
+      <article class="cap">
+        <span class="org">Science Award · 1st prize</span>
+        <h3>T-MECA — trustworthy arrhythmia ML</h3>
+        <p>Four signal-to-image encodings fused with MC-Dropout uncertainty. Referring the 10% least-confident beats lifts F1 to 0.947.</p>
+        <div class="foot">
+          <span class="stat">0.916 macro-F1</span>
+          <a class="src" href="https://github.com/theahlamtarik/T-MECA-Trustworthy-Multi-Encoding-Classification-of-Arrhythmias-" target="_blank" rel="noopener">code</a>
+          <span class="yr">2026</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Building</h2>
+    <div class="grid">
+
+      <article class="cap">
+        <span class="org">ADD · Ministry of Digital Transition</span>
+        <h3>Agentic assistant, national platform</h3>
+        <p>LangGraph multi-step tool-calling + RAG for Morocco's <em>Academia Raqmya</em>.</p>
+        <div class="foot"><span class="yr">2025</span></div>
+      </article>
+
+      <article class="cap">
+        <span class="org">Mystery Gifts</span>
+        <h3>Multi-agent recommendation engine</h3>
+        <p>CrewAI system, exhibited at GITEX Africa and MEDays 2025.</p>
+        <div class="foot"><span class="yr">2025 –</span></div>
+      </article>
+
+      <article class="cap">
+        <span class="org">AlWarid</span>
+        <h3>Healthcare decision support</h3>
+        <p>Voice-to-report, explainable diagnosis under uncertainty, multilingual patient portal.</p>
+        <div class="foot">
+          <span class="stat">1st regional</span>
+          <span class="stat">UNIMED Start Cup</span>
+        </div>
+      </article>
+
+      <article class="cap">
+        <span class="org">Morocco AI Summer School</span>
+        <h3>EVA — multimodal coaching</h3>
+        <p>Speech, prosody, gesture and sign-language recognition with LLM semantic scoring.</p>
+        <div class="foot">
+          <span class="stat">top 3.8%</span>
+          <a class="src" href="https://github.com/theahlamtarik/Eva" target="_blank" rel="noopener">code</a>
+          <span class="yr">2025</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Recognition</h2>
+    <div class="chips">
+      <span class="chip"><b>1st</b> Science Award — Spring School, UM6P × Polytechnique</span>
+      <span class="chip"><b>1st</b> regional / 2nd national — RamadanIA 2026</span>
+      <span class="chip"><b>2nd</b> Act in Space Morocco, CNES</span>
+      <span class="chip"><b>Jury Favourite</b> — Maison de l'IA</span>
+      <span class="chip">Demo — Women AI Forum 2026</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Stack</h2>
+    <dl class="stack">
+      <dt>Core</dt><dd>Python · PyTorch · scikit-learn · scikit-survival · Hugging Face</dd>
+      <dt>Methods</dt><dd>Self-supervised &amp; contrastive learning · uncertainty quantification · survival analysis · multimodal fusion</dd>
+      <dt>Agents</dt><dd>LangGraph · LangChain · CrewAI · FAISS · RAG · Whisper</dd>
+      <dt>Signals</dt><dd>WavLM · AudioSeal · WFDB · OpenCV/YOLO</dd>
+      <dt>Spoken</dt><dd>Arabic · French · English · Spanish</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Community</h2>
+    <div class="chips">
+      <span class="chip">Head of AI, <b>Digiclub</b> — UEMF's first IT club</span>
+      <span class="chip">Organizer, <b>HF LeRobot Hackathon</b> — sole in Morocco</span>
+      <span class="chip">Mentor, <b>Digigirlz</b> (Microsoft)</span>
+      <span class="chip">AI Instructor, Algorithmics (K-12)</span>
+    </div>
+  </section>
+
+  <footer>
+    <span class="mono">ahlam.tarik@eidia.ueuromed.org</span>
+    <span class="mono">Fez, MA</span>
+  </footer>
+
+</main>
+
+<script>
+// Hero texture: an attention map settling — a grid of cells whose weights drift,
+// sharpen into a few bright rows, then diffuse again.
+(function(){
+  var c = document.getElementById('bgfx');
+  if(!c || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var ctx = c.getContext('2d'), w, h, dpr, t = 0, cols, rows, cell = 15, gap = 3;
+
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = c.clientWidth; h = c.clientHeight;
+    c.width = w * dpr; c.height = h * dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    cols = Math.ceil(w / (cell+gap)) + 1;
+    rows = Math.ceil(h / (cell+gap)) + 1;
+  }
+  window.addEventListener('resize', resize); resize();
+
+  var rgb = null;
+  function inkRGB(){
+    if(rgb) return rgb;
+    var v = getComputedStyle(document.body).getPropertyValue('--grid').trim();
+    var m = v.replace('#','');
+    if(m.length === 3) m = m[0]+m[0]+m[1]+m[1]+m[2]+m[2];
+    rgb = [parseInt(m.slice(0,2),16), parseInt(m.slice(2,4),16), parseInt(m.slice(4,6),16)];
+    return rgb;
+  }
+
+  function frame(){
+    ctx.clearRect(0,0,w,h);
+    var col = inkRGB(), pre = 'rgba('+col[0]+','+col[1]+','+col[2]+',';
+
+    for(var i=0;i<cols;i++){
+      for(var j=0;j<rows;j++){
+        // smooth pseudo-noise: a few offset sinusoids per axis
+        var a = Math.sin(i*0.55 + t*0.5) * Math.cos(j*0.42 - t*0.33);
+        var b = Math.sin((i+j)*0.31 + t*0.21);
+        var v = (a*0.62 + b*0.38);          // -1 … 1
+        v = Math.pow(Math.abs(v), 2.1);      // sparsify — most cells near zero
+
+        // horizontal fade so the block dissolves toward the text
+        var fade = Math.min(1, (i/(cols-1)) * 1.5 + 0.08);
+        var alpha = v * 0.5 * fade;
+        if(alpha < 0.012) continue;
+
+        ctx.fillStyle = pre + alpha.toFixed(3) + ')';
+        ctx.fillRect(i*(cell+gap), j*(cell+gap), cell, cell);
+      }
+    }
+    t += 0.008;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
