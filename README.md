@@ -1,23 +1,24 @@
-# theahlamtarik.github.io
+# portfolio
 
 Personal site for Ahlam Tarik — AI engineer & researcher.
+Live at **https://theahlamtarik.github.io/portfolio/**
 
 Single static page, no build step, no dependencies. Everything lives in `index.html`.
 
-## Deploy to GitHub Pages
+## Deploy
 
-1. Create a repo named **`theahlamtarik.github.io`** on GitHub (that exact name gives you
-   `https://theahlamtarik.github.io` with no subpath).
-2. From this folder:
+Already wired to `origin`. To publish an update:
 
 ```bash
-git init && git add . && git commit -m "portfolio" && git branch -M main && git remote add origin https://github.com/theahlamtarik/theahlamtarik.github.io.git && git push -u origin main
+git add -A && git commit -m "Update" && git push
 ```
 
-3. On GitHub: **Settings → Pages → Source: Deploy from a branch → `main` / `root`**. Live in ~1 minute.
+GitHub Pages is served from **`main` / `/ (root)`** — set under **Settings → Pages**.
+A push goes live in about a minute.
 
-> Using a differently-named repo instead (e.g. `portfolio`) works too — the URL just becomes
-> `https://theahlamtarik.github.io/portfolio/`. Nothing in the page uses absolute paths, so it works either way.
+> Renaming the repo to `theahlamtarik.github.io` would move the site to the bare
+> `https://theahlamtarik.github.io` with no `/portfolio/` subpath. Nothing in the page uses
+> absolute paths, so it works either way with no code changes.
 
 ## Editing
 
